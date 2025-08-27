@@ -28,9 +28,11 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole role=UserRole.USER;
 
+    @Column(columnDefinition = "DATETIME")
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @Column(columnDefinition = "DATETIME")
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
