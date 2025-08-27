@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: userservice
+  datasource:
+    url: jdbc:mysql://localhost:3306/fitness_user_db
+    username: hrushikesh
+    password: Hrushi@123
+
