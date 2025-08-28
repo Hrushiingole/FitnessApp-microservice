@@ -3,7 +3,7 @@ spring:
     name: ActivityService
   data:
     mongodb:
-      uri: mongodb+srv://hrishikeshingole532_db_user:fkwLSnkQHTfZHMaA@cluster0.ud6jyec.mongodb.net/
+      uri: ${MONGO_URI}
       database: FitnessApp
 
 server:
