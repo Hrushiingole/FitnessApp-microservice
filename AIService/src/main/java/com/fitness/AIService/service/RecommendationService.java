@@ -3,7 +3,6 @@ package com.fitness.AIService.service;
 import com.fitness.AIService.model.Recommendation;
 import com.fitness.AIService.respository.RecommendationRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
