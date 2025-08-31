@@ -2,6 +2,7 @@ package com.fitness.AIService.service;
 
 import com.fitness.AIService.model.Activity;
 import com.fitness.AIService.model.Recommendation;
+import com.fitness.AIService.respository.RecommendationRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -17,12 +18,14 @@ public class ActivityMessageListener {
 
     private final ActivityAiService aiService;
 
+    private final RecommendationRepository recommendationRepository;
 
     @RabbitListener(queues = "activity.queue")
     public void processActivity(Activity activity){
             log.info("Received activity for processing: {}",activity.getId());
 //        log.info("Generated Recommendation: {}",aiService.generateRecommendation(activity));
         Recommendation recommendation=aiService.generateRecommendation(activity);
+        recommendationRepository.save(recommendation);
 
     }
 }

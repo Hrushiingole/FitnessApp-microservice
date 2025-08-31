@@ -18,6 +18,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka" />
+        <module name="configServer" />
         <module name="AIService" />
       </profile>
     </annotationProcessing>
@@ -26,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AIService" options="-parameters" />
       <module name="ActivityService" options="-parameters" />
+      <module name="configServer" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="userservice" options="-parameters" />
     </option>
