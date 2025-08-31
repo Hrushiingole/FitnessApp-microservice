@@ -6,6 +6,11 @@ spring:
       mongodb:
         uri: ${MONGO_URI}
         database: FitnessRecommendation
+  rabbitmq:
+    host: localhost
+    post: 5672
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
@@ -14,5 +19,17 @@ eureka:
     prefer-ip-address: true
     hostname: localhost
 
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+
 server:
   port: 8083
+gemini:
+  api:
+    url: ${GEMINI_API_URL}
+    key: ${GEMINI_API_KEY}
