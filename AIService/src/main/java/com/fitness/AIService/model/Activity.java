@@ -20,7 +20,7 @@ public class Activity {
     private Integer duration;
     private Integer caloriesBurned;
     private LocalDateTime startTime;
-    private ActivityType type;
+    private String type;
 
     private Map<String,Object> additionalMetrics;
     private LocalDateTime createdAt;
