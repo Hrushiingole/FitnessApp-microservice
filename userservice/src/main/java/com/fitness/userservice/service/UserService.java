@@ -32,7 +32,7 @@ public class UserService {
 
     public UserResponse register(@Valid RegisterRequest request) {
 
-        if(userRepository.existsByEmail(request.getEmail())){
+        if(userRepository.existsByKeycloakId(request.getEmail())){
             User existingUser=userRepository.findByEmail(request.getEmail());
 
             UserResponse userResponse=new UserResponse();
@@ -51,6 +51,7 @@ public class UserService {
 
         user.setEmail(request.getEmail());
         user.setPassword(request.getPassword());
+        user.setKeycloakId(request.getKeycloakId());
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
 
@@ -71,6 +72,8 @@ public class UserService {
 
     public Boolean existsByKeycloakId(String userId) {
         log.info("calling user validation api for user id: {}",userId);
-        return userRepository.existsByKeycloakId(userId);
+        Boolean ans= userRepository.existsByKeycloakId(userId);
+        log.info("user already exists?:{}",ans);
+        return  ans;
     }
 }

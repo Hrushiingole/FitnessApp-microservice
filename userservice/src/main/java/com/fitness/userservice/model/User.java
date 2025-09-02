@@ -17,6 +17,7 @@ public class User {
     private String id;
 
 
+    @Column(name = "key_cloak_id")
     private String keycloakId;
 
     private String firstName;

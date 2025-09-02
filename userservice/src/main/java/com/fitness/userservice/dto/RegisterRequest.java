@@ -1,5 +1,6 @@
 package com.fitness.userservice.dto;
 
+import jakarta.persistence.Column;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -12,6 +13,7 @@ public class RegisterRequest {
     @Email(message = "Invalid Email format")
     private String email;
 
+    @Column(name = "key_cloak_id")
     private String keycloakId;
 
     @NotBlank(message = "password is required")
